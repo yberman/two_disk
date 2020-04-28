@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 
-import connect
 import composition
+import connect
 import graph
+import json
 import quad_disk
 import sys
 
@@ -39,12 +40,18 @@ for disk_size in list(range(4, 18, 2)):
                     # print everything we would want to know about the graph.
                     if g not in known_graphs:
                         known_graphs.add(g)
-                        print("G", known_graphs.size, g.adj_mat(),
-                              dwt1, dwt2, rotation,
-                              "connect" if op == connect.connect else "fuse")
+                        graph_info = {
+                            "Id": known_graphs.size,
+                            "Matrix": g.adj_mat(),
+                            "DWT1": eval(str(dwt1)),
+                            "DWT2": eval(str(dwt2)),
+                            "Twist": rotation,
+                            "Mode": "connect" if op == connect.connect else "fuse",
+                        }
+                        print("G", json.dumps(graph_info))
                         # if it is a bandit, quit in excitement
                         if g in bandits:
-                            print("!")
+                            print("!!!")
                             quit()
                     if len(known_graphs.members) == 137:
                         print("cases examined", i)
