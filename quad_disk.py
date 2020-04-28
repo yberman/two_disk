@@ -67,6 +67,9 @@ class DWT(object):
 
         self.circum = i
 
+    def __str__(self):
+        return '{"PrimaryDisk": "%s", "Transversals": %s}' % (self.pd.name, self.tc)
+
     def bcp(self, i):
         """
         Boundary code pair.
@@ -115,9 +118,6 @@ class DWT(object):
         j_ = self.tc[e] + 1 - j
         i_ = self.boundary_index(e_, j_)
         return "exit", i_
-
-    def __str__(self):
-        return "DWT(primary_disk: %s, transveral_counts: %s, twist: %s)" % (self.pd, self.tc, self.twist)
 
     def neighbors(self, tv):
         if tv.type == "interior":
