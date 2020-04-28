@@ -1,2 +1,7 @@
-# two_disk
-The two-disk algorithm from "Which Cubic Graphs have Quadrangulated Spherical Immersions?"
+# Two disk method for generating cubic quadrangulation
+
+Usage: `python3 two_disk.py`
+
+This is the two-disk algorithm refered to in our paper, 
+[Which Cubic Graphs have Quadrangulated Spherical Immersions?](https://arxiv.org/abs/1909.05461).
+See my [note](https://yberman.com/cubic-quadrangulations) on the problem.
