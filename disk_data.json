@@ -1,0 +1,9 @@
+{"BoundaryInteriorEdge": ["", "3", "1", "2", "3", "1"], "EnterExitTrans": [5, 3, 4, 1, 2, 0], "Filename": "disk1.txt", "InteriorEdges": [["1", "2"], ["2", "3"]], "InteriorVertices": ["1", "2", "3"]}
+{"BoundaryInteriorEdge": ["", "2", "3", "1", "3", "2", "3", "1"], "EnterExitTrans": [7, 4, 5, 6, 1, 2, 3, 0], "Filename": "disk2.txt", "InteriorEdges": [["1", "2"]], "InteriorVertices": ["1", "2", "3"]}
+{"BoundaryInteriorEdge": ["", "1", "3", "2", "1", "2", "3", "1"], "EnterExitTrans": [7, 3, 5, 1, 6, 2, 4, 0], "Filename": "disk3.txt", "InteriorEdges": [["2", "3"]], "InteriorVertices": ["1", "2", "3"]}
+{"BoundaryInteriorEdge": ["", "2", "3", "1", "3", "2", "1", "3", "1", "2"], "EnterExitTrans": [9, 4, 6, 7, 1, 8, 2, 3, 5, 0], "Filename": "disk4.txt", "InteriorEdges": [], "InteriorVertices": ["1", "2", "3"]}
+{"BoundaryInteriorEdge": ["", "1", "2", "3", "2", "1", "3", "2", "3", "1"], "EnterExitTrans": [9, 4, 6, 7, 1, 8, 2, 3, 5, 0], "Filename": "disk5.txt", "InteriorEdges": [], "InteriorVertices": ["1", "2", "3"]}
+{"BoundaryInteriorEdge": ["", "2", "1", "", "1", "2"], "EnterExitTrans": [2, 4, 0, 5, 1, 3], "Filename": "disk6.txt", "InteriorEdges": [["1", "2"]], "InteriorVertices": ["1", "2"]}
+{"BoundaryInteriorEdge": ["", "2", "1", "2", "", "1", "2", "1"], "EnterExitTrans": [3, 5, 6, 0, 7, 1, 2, 4], "Filename": "disk7.txt", "InteriorEdges": [], "InteriorVertices": ["1", "2"]}
+{"BoundaryInteriorEdge": ["", "1", "", "1", "", "1"], "EnterExitTrans": [3, 4, 5, 0, 1, 2], "Filename": "disk8.txt", "InteriorEdges": [], "InteriorVertices": ["1"]}
+{"BoundaryInteriorEdge": ["", "", "", ""], "EnterExitTrans": [2, 3, 0, 1], "Filename": "disk9.txt", "InteriorEdges": [], "InteriorVertices": []}
