@@ -1,5 +1,16 @@
 """
-Compositions of a number.
+composition.py
+
+Integer compositions of a number.
+
+Given a whole number n, find all sums of k positive numbers which add to n.
+Also, can do non-negative. Orders matters, so for example
+
+>>> list(positive(5, 2))
+[(1, 4), (2, 3), (3, 2), (4, 1)]
+
+>>> list(non_negative(4, 2))
+[(0, 4), (1, 3), (2, 2), (3, 1), (4, 0)]
 """
 import itertools
 import random
@@ -12,15 +23,15 @@ def positive(n, k):
 
     Note there \binom{n-1}{k-1} such tuples. 
 
-		>>> for c in positive(5, 3):
-		...     print(c)
-		... 
-		(1, 1, 3)
-		(1, 2, 2)
-		(1, 3, 1)
-		(2, 1, 2)
-		(2, 2, 1)
-		(3, 1, 1)
+    >>> for c in positive(5, 3):
+    ...     print(c)
+    ... 
+    (1, 1, 3)
+    (1, 2, 2)
+    (1, 3, 1)
+    (2, 1, 2)
+    (2, 2, 1)
+    (3, 1, 1)
     """
     for comb in itertools.combinations(range(n-1), k-1):
         comb = [-1] + list(comb) + [n-1]
