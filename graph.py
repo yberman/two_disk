@@ -1,10 +1,25 @@
 """
 graph.py
 
-An ad-hoc implementation of a graph.
+An ad-hoc implementation of a graph.  NetworkX was inneficient for what I was
+trying to do, matching many small graphs agains a small set of target graphs.
 
-NetworkX was inneficient for what I was trying to do, matching many
-small graphs agains a small set of target graphs.
+Graph bags are a set of graphs, which test for containment quickly.
+
+>>> g1 = Graph()                                                                
+>>> g1.add_edge("1", "2")                                                       
+>>> g1.add_edge("3", "2")                                                       
+>>> 
+>>> g2 = Graph()                                                                
+>>> g2.add_edge(9, 2)                                                       
+>>> g2.add_edge(3, 2)                                                       
+>>> 
+>>> gb = GraphBag()                                                             
+>>> gb.add(g1)                                                                  
+>>> g2 in gb
+True
+>>> Graph() in gb
+False
 """
 import collections
 import itertools
@@ -31,14 +46,12 @@ class Graph:
         """
         return list(set(v for v,w in self.m))
 
-    def adj_mat(self, vs=None):
+    def adj_mat(self, vs):
         """
         Adjacency matrix as tuple.
 
         Basis is chosen wrt ordering vs.
         """
-        if vs is None:
-            vs = self.vertices()
         m = []
         for v in vs:
             row = []
@@ -65,10 +78,10 @@ class GraphBag(dict):
         self.size += 1
 
     def __getitem__(self, g):
-        return super().__getitem__(g.adj_mat())
+        return super().__getitem__(g.adj_mat(g.vertices()))
 
     def __contains__(self, g):
-        return super().__contains__(g.adj_mat())
+        return super().__contains__(g.adj_mat(g.vertices()))
 
 def make_target(filename):
     """
@@ -100,17 +113,3 @@ def make_target(filename):
         assert False
     return targets
 
-
-
-
-if __name__ == "__main__":
-
-    g1 = Graph()
-    g1.add_edge("1", "2")
-    g1.add_edge("3", "2")
-    g2 = Graph()
-    g2.add_edge("9", "2")
-    g2.add_edge("3", "2")
-    gb = GraphBag()
-    gb.add(g1)
-    print(g2 in gb)
